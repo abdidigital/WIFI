@@ -95,6 +95,7 @@ function generate_passwords($mode = '3L2N', $count = 10) {
             $p = implode('', array_map(fn() => $numbers[array_rand($numbers)], range(1,6)));
         } elseif ($mode == '3L2N') {
             $p = implode('', array_map(fn() => $letters[array_rand($letters)], range(1,3))) .
+               implode('', array_map(fn() => $numbers[array_rand($numbers)], range(1,2)));
             } elseif ($mode == '2L2N') {
             $p = implode('', array_map(fn() => $letters[array_rand($letters)], range(1,2))) .
                  implode('', array_map(fn() => $numbers[array_rand($numbers)], range(1,2)));
